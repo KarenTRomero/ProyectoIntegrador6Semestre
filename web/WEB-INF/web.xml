@@ -4,9 +4,25 @@
         <servlet-name>Login</servlet-name>
         <servlet-class>Clases.Contro_Login</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Controlador</servlet-name>
+        <servlet-class>controlador.Controlador</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Controlador_CRUD_Usuario</servlet-name>
+        <servlet-class>controlador.Controlador_CRUD_Usuario</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Controlador</servlet-name>
+        <url-pattern>/Controlador</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Controlador_CRUD_Usuario</servlet-name>
+        <url-pattern>/Controlador_CRUD_Usuario</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

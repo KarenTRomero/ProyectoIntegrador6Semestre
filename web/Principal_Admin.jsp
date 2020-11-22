@@ -9,35 +9,93 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="css/Admin_Estilo.css" rel="stylesheet" type="text/css"/>
          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <title>Principal Admin</title>
+        <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@600&display=swap" rel="stylesheet">
+       
+         <title>Principal Admin</title>
        
     </head>
     <body>
-        <nav class="navbar navbar-dark bg-dark">
-            
-           <div class="dropdown">
-               <a style="color:white" class="navbar-toggle" data-toggle="dropdown"> <span class="navbar-toggler-icon"></span> Home</a>
-                <div class="dropdown-menu text-center">
-                    <a href="" class="dropdown-item">CRUD</a>
-                    <div class="dropdown-divider"></div>
-                    
+        <%
+        HttpSession sesion=request.getSession();
+        if(sesion.getAttribute("logueado")==null ||sesion.getAttribute("logueado").equals("0")){
+        response.sendRedirect("Login.jsp");
+        }
+        %>
+         <div class="hero">
+            <div class="navbar">
+                <img src="imagen/logo.png" alt=""/>
+
+                <ul>
+                    <li><a href="PrincipalAdmin.jsp">Home</a></li>
+                    <li><a href="#Footer">Contact</a></li>
+                </ul>
+
+                <div class="navbar-icons">
+                    <ul> 
+                        <li><a href="#" ><img src="imagen/usuario.png" alt=""/></a>
+                            <div class="sub-menu-1">
+                                <ul>
+                                    <li><a href="Principal_Clien.jsp">Cerrar Sesion</a></li>
+                                    <li><a href="#">Pagina Principal</a></li>
+                                </ul>
+                            </div>
+
+                        </li>
+                        <li><a href="#" ><img src="imagen/menu (1).png" alt=""/></a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="dropdown">
-                <a style="color: white" href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" > Cerrar Sesión</a>
-                <div class="dropdown-menu text-center">
-                    <a><img src="imagen/profesor.png" height="80" width="80"</a>
-                    <a>Administrador</a>
-                    <div class="dropdown-divider"></div>
-                    <a href="Login.jsp" class="dropdown-item">Salir</a>
+            <div class="banner">
+                <div class="left-column">
+                    <h1>MATH<span>MIND</span></h1>
+                    <h3><span>¡Diviertete </span>Aprendiendo!</h3>
+                    <p>Mathmind es un aplicativo web diseñado para facilitar
+                        los procesos de <br>aprendizaje en el área de matemáticas 
+                        para niños entre cinco y nueve años,<br>con la finalidad 
+                        de reforzar sus conocimientos por medio de herramientas 
+                        interactivas.
+                    </p>
+                    <div class="btn">
+                        <a href="Crud_Usuario.jsp" ><button type="button" class="primary-btn">CRUD ADMIN</button></a>
+                        <a href="Principal.jsp" ><button type="button">CATEGORIAS</button></a>
+                    </div>
+                </div>
+                <div class="right-column">
+                    <img src="imagen/imagenAdmin.png" alt=""/>
                 </div>
             </div>
-        </nav>
-        <div class="container mt-4">
-            <h1>Bienvenido al sistema</h1>
         </div>
-             
+
+        <footer>
+            <div class="main-content" id="Footer">
+                <div class="left box">
+                    <h2>Acerca de nosotros</h2>
+                    <div class="content">
+                        <p>MATHMIND<br>
+                            ¡¡Diviertete Aprendiendo!!</p>
+                    </div>
+                </div>
+                <div class="rigt box">
+                    <h2>Contactanos</h2>
+                    <div class="content">
+                        <div class="place">
+                            <img src="imagen/ubicacion.png">
+                            <span class="text">Fusagasugá, Colombia</span>
+                        </div>
+                        <div class="phone">
+                            <img src="imagen/telefono.png">
+                            <span class="text">+57 320-879-1391</span>
+                        </div>
+                        <div class="email">
+                            <img src="imagen/mensaje.png">
+                            <span class="text">Mathmind@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

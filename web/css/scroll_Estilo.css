@@ -1,0 +1,239 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+section{
+    height: 650px;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 40px;
+    align-items: center;
+}
+
+section h2{
+    font-size: 50px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+section p{
+    /*font-weight: 300;*/
+    margin-bottom: 15px;  
+}
+
+section a{
+    display: inline-block;
+    padding: 7px 0;
+    color: #283773;
+    text-decoration: none;
+    width: 100px;
+    text-align: center;
+    border: 1px solid #fff;
+    border-radius: 50px;
+    background: #fff; 
+}
+section img{
+    height: 60%;
+}
+
+section:nth-child(4){
+    background-image: linear-gradient(to top, #0fd850 0%, #f9f047 100%);
+}
+
+section:nth-child(3){
+    background-image: linear-gradient(60deg, #3d3393 0%, #2b76b9 37%, #2cacd1 65%, #35eb93 100%);
+}
+
+section:nth-child(2){
+    background-image: linear-gradient(to right, #f9d423 0%, #ff4e50 100%);
+}
+
+section:nth-child(1){
+    background-image: linear-gradient(to top, #e14fad 0%, #f9d423 100%);
+}
+
+section img{
+    animation: ilustrationAnimate ease-in 1s infinite alternate;
+}
+
+@keyframes ilustrationAnimate{
+    0%{
+        transform: scale(1);
+    }100%{
+        transform: scale(1.04);
+    }
+}
+
+@media screen and (max-width:1000px){
+    section{
+        flex-direction: column-reverse;
+        /*justify-content: center;*/
+    }
+
+    section > img{
+        height: 40%;  
+    }
+
+    .contenedor-texto{
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:600px){
+
+    section > img{
+        height: 25%;  
+    }
+
+}
+
+header nav{
+    height: 70px;
+    background: #111111;
+    display: flex;
+    justify-content: space-between;
+}
+
+.icono{
+    display: none;
+}
+.enlaces{
+    display: flex;
+    height: 100%;
+    width: 30%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.enlaces a{
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    padding: 4px 0;
+    transition: 0.7s ease-out;
+    color: #fff;
+    text-decoration: none;
+}
+
+.enlaces a:hover, 
+.active{
+    border-top: 2px solid coral;
+    border-bottom: 2px solid coral;
+
+}
+
+nav .logo{
+    height: 100%;
+    background: #fff;
+    margin-left: 80px;
+}
+
+nav .logo img{
+    object-fit: cover;
+    height: inherit;
+}
+
+@media screen and (max-width:750px){
+    .icono{
+        display: flex;
+        justify-content: center;
+        height: 70px;
+        align-items: center;
+        color: #fff;
+        background: transparent;
+        padding: 20px;
+        z-index: 100;
+        cursor: pointer;
+        margin-right: 40px;
+    }
+
+    .enlaces{
+        position: fixed;
+        height: 100vh;
+        right: 0;
+        width: 100%;
+        flex-direction: column;
+        transition: all 1s ease;
+        background: #f46b45;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #eea849, #f46b45);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #eea849, #f46b45); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    }
+    
+    .uno{
+        -webkit-clip-path: circle(0% at 100% 0%);
+        clip-path: circle(0% at 100% 0%);
+        
+    }
+    
+    .dos{
+        -webkit-clip-path: circle(150% at 100% 0%);
+        clip-path: circle(150% at 100% 0%);
+        
+    }
+}
+
+@media screen and (max-width:400px){
+    .logo{
+        margin-left: 20px;
+    }
+    .icono{
+        margin-right: 20px;
+    }
+}
+
+.modal-container{
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background:#000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.close{
+    position: relative;
+    top: 5px;
+    right: 5px;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background: #c44a4a;
+    color: #fff;
+    line-height: 25px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.modal{
+    width: 40%;
+    height: 50%;
+    background: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    transition: transform 0.3s;
+    transform: translateY(0%);
+    border-radius: 10px;
+}
+
+.modal > img{
+    height: 50%;
+}

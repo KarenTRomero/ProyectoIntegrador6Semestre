@@ -11,6 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>MathMind</title>
         <link href="css/PrinciC_Estilo.css" rel="stylesheet" te="text/>css"/>   
+        <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
     </head>
     <body>
        <header>
