@@ -12,9 +12,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
         <link href="css/L_Estilo.css" rel="stylesheet" type="text/css"/>
         <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
-       <%--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">--%>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <link rel="icon" type="image/jpg" href="imagen/logo-icono.png"
     </head>
     <body>
         <main class="contenedor" >
@@ -30,44 +32,49 @@
                         <input type="password" name="txt_Pass" id="name" required><span class="barra"></span>
                         <label for="">Password</label>
                     </div>
-                    
+
                     <%
-                    Connection con = null;
-                    Statement st = null;
-                    ResultSet rs = null;
-                    Encriptar enc=new Encriptar();
-                    if (request.getParameter("accion") != null) {
-                        String user = request.getParameter("txt_User");
-                        String pass = request.getParameter("txt_Pass");
-                        HttpSession sesion = request.getSession();
-                        
-                        try {
-                            Class.forName("com.mysql.jdbc.Driver");
-                            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/mathmind", "root", "");
-                            st = con.createStatement();
-                            rs = st.executeQuery("Select * from usuario where user='" + user + "' and pass='" + enc.getMD5(pass) + "' ;");
-                            while (rs.next()) {
-                                sesion.setAttribute("logueado", "1");
-                                sesion.setAttribute("user", rs.getString("user"));
-                                sesion.setAttribute("id", rs.getString("id_usuario"));
-                                response.sendRedirect("Principal_Admin.jsp");
+                        Connection con = null;
+                        Statement st = null;
+                        ResultSet rs = null;
+                        Encriptar enc = new Encriptar();
+                        if (request.getParameter("accion") != null) {
+                            String user = request.getParameter("txt_User");
+                            String pass = request.getParameter("txt_Pass");
+                            HttpSession sesion = request.getSession();
+
+                            try {
+                                Class.forName("com.mysql.jdbc.Driver");
+                                con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/mathmind", "root", "");
+                                st = con.createStatement();
+                                rs = st.executeQuery("Select * from usuario where user='" + user + "' and pass='" + enc.getMD5(pass) + "' ;");
+                                while (rs.next()) {
+                                    sesion.setAttribute("logueado", "1");
+                                    sesion.setAttribute("user", rs.getString("user"));
+                                    sesion.setAttribute("id", rs.getString("id_usuario"));
+                                    response.sendRedirect("Principal_Admin.jsp");
+                                }
+                    %>
+                    <div>
+                    <div class="alert alert-danger" role="alert"> Usuario y/o contraseña incorrectos</div>
+                    </div>
+                    <%
+                            } catch (Exception e) {
+                                out.print(e);
+
                             }
-                            out.print(" <div class=\"alert alert-danger\" role=\"alert\">usuario no valido</div>");
-                        } catch (Exception e) {
-                            out.print(e);
-
                         }
-                    }
-                %>
+                    %>
 
-                    <button type="submit" name="accion" value="Ingresar">Ingresar</button>
+                    <button type="submit" name="accion" value="Ingresar" >Ingresar</button>
+
                     <nav>
                         <a href="Principal_Clien.jsp">Volver</a>
                     </nav>
 
 
                 </div>
-                
+
             </form>
 
             <div class="contenedor-imagen">

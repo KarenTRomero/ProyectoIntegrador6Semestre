@@ -12,6 +12,7 @@
         <title>MathMind</title>
         <link href="css/PrinciC_Estilo.css" rel="stylesheet" te="text/>css"/>   
         <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+     <link rel="icon" type="image/jpg" href="imagen/logo-icono.png"
     </head>
     <body>
        <header>

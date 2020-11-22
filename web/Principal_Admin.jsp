@@ -12,9 +12,9 @@
         <link href="css/Admin_Estilo.css" rel="stylesheet" type="text/css"/>
          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@600&display=swap" rel="stylesheet">
-       
+        
          <title>Principal Admin</title>
-       
+       <link rel="icon" type="image/jpg" href="imagen/logo-icono.png"
     </head>
     <body>
         <%
@@ -28,22 +28,16 @@
                 <img src="imagen/logo.png" alt=""/>
 
                 <ul>
-                    <li><a href="PrincipalAdmin.jsp">Home</a></li>
+                    
                     <li><a href="#Footer">Contact</a></li>
                 </ul>
 
                 <div class="navbar-icons">
                     <ul> 
-                        <li><a href="#" ><img src="imagen/usuario.png" alt=""/></a>
-                            <div class="sub-menu-1">
-                                <ul>
-                                    <li><a href="Principal_Clien.jsp">Cerrar Sesion</a></li>
-                                    <li><a href="#">Pagina Principal</a></li>
-                                </ul>
-                            </div>
-
-                        </li>
-                        <li><a href="#" ><img src="imagen/menu (1).png" alt=""/></a></li>
+                        <li><a href="Login.jsp" >Login<img src="imagen/banquero.png" alt=""/></a></li>
+                            
+                        <li><a href="Principal_Clien.jsp" >Cliente<img src="imagen/estudiantee.png" alt=""/></a></li>
+                        
                     </ul>
                 </div>
             </div>
@@ -59,7 +53,7 @@
                     </p>
                     <div class="btn">
                         <a href="Crud_Usuario.jsp" ><button type="button" class="primary-btn">CRUD ADMIN</button></a>
-                        <a href="Principal.jsp" ><button type="button">CATEGORIAS</button></a>
+                        <a href="Scroll.jsp" ><button type="button">CATEGORIAS</button></a>
                     </div>
                 </div>
                 <div class="right-column">
@@ -71,10 +65,9 @@
         <footer>
             <div class="main-content" id="Footer">
                 <div class="left box">
-                    <h2>Acerca de nosotros</h2>
+                    <h2>MATHMIND</h2>
                     <div class="content">
-                        <p>MATHMIND<br>
-                            ¡¡Diviertete Aprendiendo!!</p>
+                        <p>¡¡Diviertete Aprendiendo!!</p>
                     </div>
                 </div>
                 <div class="rigt box">
